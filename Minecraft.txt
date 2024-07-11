@@ -7,3 +7,7 @@
   加入
   public static boolean e437crash_eventDeath;
   触发就调成true~
+还需要加一个public static Frame mcFrame;
+在下面的 main中
+Frame frame = Minecraft.mcFrame = new Frame();
+中间加等于
