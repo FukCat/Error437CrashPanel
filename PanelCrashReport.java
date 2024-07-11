@@ -78,7 +78,7 @@ public class PanelCrashReport extends Panel //崩溃后的面板
         else {//控制崩溃后的样子
             StringBuilder sb3 = new StringBuilder("\r\n **** ***  ***   ***  ***     **  ***  *****\r\n *    *  * *  * *   * *  *   * * *   * *   *\r\n *    *  * *  * *   * *  *  *  *     *     *\r\n **** ***  ***  *   * ***  *   *   **     *\r\n *    *  * *  * *   * *  * *****     *   *\r\n *    *  * *  * *   * *  *     * *   *   *\r\n **** *  * *  *  ***  *  *     *  ***    *\r\n\r\n");
             for (int i = 0; i < 32767; i = (short)(i + 1)) {//加载error437的logo
-                sb3.append((char)Minecraft.clientRand.nextInt());//生成随机字符
+                sb3.append((char)Minecraft.clientRand.nextInt());//生成随机字符,clientRand是一个public的随机数
             }
             s5 = sb3.toString();
         }
@@ -87,7 +87,7 @@ public class PanelCrashReport extends Panel //崩溃后的面板
         if (Minecraft.e437crash_eventDeath) {
             textArea.setBackground(Color.BLACK);
             textArea.setForeground(new Color(6684672));//设置文字颜色和背景颜色
-            Minecraft.x();
+            Minecraft.getMinecraft();//获取Minecraft哦
             new Error437PanelCrashShake(Minecraft.mcFrame).start();//使得游戏窗口摇晃,注意mcFrame需要单独弄一个public变量
         }
         this.add(new CanvasMojangLogo(), "North");
