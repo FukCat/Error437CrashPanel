@@ -1,0 +1,9 @@
+需要对Minecraft (在net.minecraft.client包下)最初的修改~~
+这里只写出相关的代码o (
+  加入
+  public static Random clientRand = new Random();
+  导入import java.util.Random;
+事件的
+  加入
+  public static boolean e437crash_eventDeath;
+  触发就调成true~
